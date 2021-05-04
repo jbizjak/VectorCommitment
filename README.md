@@ -19,9 +19,12 @@ Two exception are:
 
 <h4>CDH implementation</h4>
 VectorCommitmentDH.py contains a vector commitment implementation based on the CDH assumption.
+This implementation is incomplete, as the bilinear pairing library used does not support subtraction, thus updating and verifying the proofs is not possible. 
+
+Making this work should be as simple as replacing the current pairing library but I could not get another library installed properly.
 
 
-Example usage:
+<h4>Example usage</h4>
 
 messages = [1, 2, 3] #create some messages
 
