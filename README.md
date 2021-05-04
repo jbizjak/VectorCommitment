@@ -9,7 +9,7 @@ VectorCommitment.py contains a vector commitment implementation based on the RSA
 
 The Crypto library is used to generate random primes.
 
-Almost all code follows a straightforward implementation of the implementation described in: 
+Almost all code follows a straightforward implementation of the implementation described in: https://www.iacr.org/archive/pkc2013/77780054/77780054.pdf
 
 Two exception are:
 
