@@ -26,9 +26,9 @@ Making this work should be as simple as replacing the current pairing library bu
 
 <h4>Example usage</h4>
 
-messages = [1, 2, 3] #create some messages
+messages = [1, 2, 3, 4] #create some messages
 
-n, e, a, S = keygen(messages, len(messages)) #generate public parameters
+n, e, a, S = keygen(messages, 3) #generate public parameters, 3 is max number of bits
 
 c = commit(messages, S, n) #generate commitment
 
