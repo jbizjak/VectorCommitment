@@ -122,9 +122,18 @@ def keygen(messages, l):
     maxBits = l
 
     randprimes = []
-    for m in messages:
-        randprimes.append(number.getPrime(maxBits + 1))
-
+    while True:
+        tempprime = number.getPrime(maxBits + 1)
+        alreadyUsed = False
+        for num in randprimes:
+            if tempprime == num:
+                alreadyUsed = True
+        if alreadyUsed:
+            continue
+        randprimes.append(tempprime)
+        if len(randprimes) == len(messages):
+            break
+            
     S = fast_gen(randprimes, a, n)
     return n, randprimes, a, S
 
