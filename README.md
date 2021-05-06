@@ -26,6 +26,7 @@ Making this work should be as simple as replacing the current pairing library bu
 
 <h4>Example usage</h4>
 
+```
 messages = [1, 2, 3, 4] #create some messages
 
 n, e, a, S = keygen(messages, 3) #generate public parameters, 3 is max number of bits
@@ -38,8 +39,9 @@ proof = open(messages, e, a, n, 0) #create opening (proof)
 
 if(verify(c, messages[0], 0, proof, S, messages, e, n)): 
 
-    print("sucess")
+    print("success")
   
 else:
  
     print("failure")
+```
