@@ -34,7 +34,12 @@ c = commit(messages, S, n) #generate commitment
 
 proof = open(messages, e, a, n, 0) #create opening (proof)
 
-if(verify(c, messages[0], 0, proof, S, messages, e, n)): #should be able to verify that proof with respect to the commitment and the message
+#should be able to verify that proof with respect to the commitment and the message
+
+if(verify(c, messages[0], 0, proof, S, messages, e, n)): 
+
   print("sucess")
- else:
+  
+else:
+ 
   print("failure")
