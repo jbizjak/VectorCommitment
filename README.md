@@ -38,8 +38,8 @@ proof = open(messages, e, a, n, 0) #create opening (proof)
 
 if(verify(c, messages[0], 0, proof, S, messages, e, n)): 
 
-  print("sucess")
+    print("sucess")
   
 else:
  
-  print("failure")
+    print("failure")
