@@ -167,7 +167,7 @@ def main():
 
     messages = [12312, 132131, 5112321312324] #random messages
 
-    n, e, a, S = keygen(messages, 3) #generate key and proof and verify it for a simple situation
+    n, e, a, S = keygen(messages, 30) #generate key and proof and verify it for a simple situation
 
     c = commit(messages, S, n)
 
