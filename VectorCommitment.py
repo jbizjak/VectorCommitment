@@ -133,7 +133,7 @@ def keygen(messages, l):
         randprimes.append(tempprime)
         if len(randprimes) == len(messages):
             break
-            
+
     S = fast_gen(randprimes, a, n)
     return n, randprimes, a, S
 
@@ -167,7 +167,7 @@ def main():
 
     messages = [12312, 132131, 5112321312324] #random messages
 
-    n, e, a, S = keygen(messages, 3) #generate key and proof and verify it for a simple situation
+    n, e, a, S = keygen(messages, 30) #generate key and proof and verify it for a simple situation
 
     c = commit(messages, S, n)
 
@@ -199,6 +199,10 @@ def main():
     #now verify the new proof with the new c value
     newProof = updateProof(oldProof, e, messages[0], newmessage, a, 0, 1, n)
     verified3 = verify(newC, messages[1], 1, newProof, S, messages, e, n)
+    if(not verified3):
+        print("ERROR: updated proof rejected")
+    else:
+        print("updated proof works with updated commit")
 
     #quick sanity check, we cannot verify a message with the old proof after updating messages
     verified4 = verify(newC, messages[1], 1, oldProof, S, messages, e, n)
