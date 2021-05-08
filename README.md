@@ -26,6 +26,7 @@ Making this work should be as simple as replacing the current pairing library bu
 
 <h4>Example usage</h4>
 
+```
 messages = [1, 2, 3, 4] #create some messages
 
 n, e, a, S = keygen(messages, 3) #generate public parameters, 3 is max number of bits
@@ -34,7 +35,13 @@ c = commit(messages, S, n) #generate commitment
 
 proof = open(messages, e, a, n, 0) #create opening (proof)
 
-if(verify(c, messages[0], 0, proof, S, messages, e, n)): #should be able to verify that proof with respect to the commitment and the message
-  print("sucess")
- else:
-  print("failure")
+#should be able to verify that proof with respect to the commitment and the message
+
+if(verify(c, messages[0], 0, proof, S, messages, e, n)): 
+
+    print("success")
+  
+else:
+ 
+    print("failure")
+```
